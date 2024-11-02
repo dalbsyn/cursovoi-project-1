@@ -1,3 +1,6 @@
 fastapi[standard]
-# faster-whisper
+whisper
+psutil
+time
+gpustat
 multipart

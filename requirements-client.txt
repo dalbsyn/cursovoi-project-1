@@ -1,0 +1,7 @@
+fastapi[standard]
+whisper
+psutil
+time
+gpustat
+tkinter
+multipart
