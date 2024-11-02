@@ -1,2 +1,3 @@
 fastapi[standard]
-faster-whisper
+# faster-whisper
+multipart
