@@ -5,7 +5,7 @@ import psutil
 import time
 import threading
 import gpustat
-import whisper
+from faster_whisper import WhisperModel
 
 # Инициализация функций.
 
@@ -34,14 +34,27 @@ def sth():
     ram_thread.start()
 
 def local_process(file_location):
+    model = "large-v3"
+
+    model = WhisperModel(model, device="cpu", compute_type="int8")
+
+    segments, info = model.transcribe(file_location, beam_size=5)
+
+    print("Detected language '%s' with probability %f" % (info.language, info.language_probability))
+
     output_field.delete("1.0", END)
-    model = whisper.load_model("small")
-    result = model.transcribe(file_location)
-    output_field.insert("1.0", result["text"])
+
+    for segment in segments:
+        print("[%.2fs -> %.2fs] %s" % (segment.start, segment.end, segment.text))
+        output_field.insert("1.end", segment.text)
 
 def local_process_sep_thread(file_location):
     local_process_thread = threading.Thread(target=local_process, args=(file_location,))
     local_process_thread.start()
+
+def temp():
+    for i in range(0, 20):
+        output_field.insert("{0}.0".format(i), "aaaaa\n")
 '''
 Инициализация приложения:
 - главное окно: main;
@@ -78,7 +91,7 @@ link_to_project = Label(left_frame, text="https://github.com/dalbsyn/cursovoi-pr
 
 # Левая часть - кнопки 
 begin_button = Button(left_frame, text="Начать", command=lambda: local_process_sep_thread(select_file_location["text"]))
-stop_button = Button(left_frame, text="Остановить")
+stop_button = Button(left_frame, text="Остановить", command=temp)
 select_file_button = Button(left_frame, text="Выберите файл", command=open_file)
 
 # Левая часть - низ

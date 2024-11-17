@@ -1,0 +1,4 @@
+faster-whisper
+psutil
+gpustat
+multipart
