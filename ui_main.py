@@ -8,21 +8,15 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
-    QCursor, QFont, QFontDatabase, QGradient,
-    QIcon, QImage, QKeySequence, QLinearGradient,
-    QPainter, QPalette, QPixmap, QRadialGradient,
-    QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFileDialog, QFrame, QGridLayout,
-    QHBoxLayout, QLabel, QLineEdit, QMainWindow,
-    QMenu, QMenuBar, QProgressBar, QPushButton,
-    QSizePolicy, QSpacerItem, QTextEdit, QVBoxLayout,
-    QWidget)
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QAction, QBrush, QCursor, QFont, QFontDatabase, QIcon, QImage, QKeySequence, QPainter, QTransform)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFileDialog, QFrame, QGridLayout, QHBoxLayout, QLabel, QLineEdit, QMainWindow, QMenu, QMenuBar, QProgressBar, QPushButton, QSizePolicy, QSpacerItem, QTextEdit, QVBoxLayout, QWidget)
 from faster_whisper.utils import _MODELS
 from faster_whisper.tokenizer import _LANGUAGE_CODES
+from faster_whisper import WhisperModel
+from faster_whisper.transcribe import TranscriptionOptions
+import ui_model_management
+import sys
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -48,8 +42,6 @@ class Ui_MainWindow(object):
         self.pushButton.setObjectName(u"pushButton")
 
         self.pushButton.clicked.connect(self.select_file_dialog)
-
-
 
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
@@ -220,6 +212,7 @@ class Ui_MainWindow(object):
         self.button_start.setObjectName(u"button_start")
 
         self.verticalLayout_3.addWidget(self.button_start)
+        self.button_start.clicked.connect(self.transcribe)
 
         self.button_stop = QPushButton(self.verticalFrame)
         self.button_stop.setObjectName(u"button_stop")
@@ -257,8 +250,16 @@ class Ui_MainWindow(object):
 
     def select_file_dialog(self):
         filename = QFileDialog.getOpenFileName()
-        print(filename)
         self.lineEdit.setText(filename[0])
+
+    def transcribe(self):
+        model_size = self.box_models.currentText()
+        model = WhisperModel(model_size, device="cpu", compute_type="int8")
+        segments, info = model.transcribe(self.lineEdit.displayText(), self.box_languages.currentText(), beam_size=5)
+        for segment in segments:
+            temp = "[%.2fs -> %.2fs] %s" % (segment.start, segment.end, segment.text)
+            print(temp)
+            self.area_output.append(temp)
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0422\u0440\u0430\u043d\u0441\u043a\u0440\u0438\u043f\u0442\u043e\u0440 9999", None))
