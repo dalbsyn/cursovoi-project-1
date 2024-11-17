@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReferenceWindow</class>
+ <widget class="QMainWindow" name="ReferenceWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>783</width>
+    <height>449</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Справка</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>730</width>
+     <height>397</height>
+    </size>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QListWidget" name="listWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustIgnored</enum>
+      </property>
+      <item>
+       <property name="text">
+        <string>Новый элемент</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Новый элемент</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ffffffffffffffffffffffFFFFFFFFFFFFFF</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Новый элемент</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a name=&quot;lipsum&quot;&gt;&lt;/a&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut viverra turpis in lacus hendrerit maximus. Duis lobortis eu metus eleifend venenatis. Praesent finibus justo at est fringilla, quis eleifend lacus fermentum. Sed velit enim, convallis ac mattis sed, suscipit non nisl. In ultricies tortor mauris, in mattis mauris tempus in. Fusce non vestibulum erat. Cras sodales dolor nec posuere lobortis. Mauris ligula ipsum, semper sit amet ultricies in, posuere eu augue. Maecenas quis lacus a est commodo euismod et ut mi. &lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Integer consectetur dolor id malesuada hendrerit. Ut suscipit dignissim justo ut elementum. Proin non sapien est. Nam sapien ipsum, hendrerit vel fringilla in, tempus molestie turpis. In quis augue et ante varius tristique sit amet ut odio. In ligula lorem, consequat sed felis in, consectetur condimentum risus. Aliquam id commodo urna. Aenean mauris nisl, pellentesque in vehicula gravida, mollis elementum nulla. Suspendisse egestas libero ac risus mollis elementum. Vivamus lacinia sit amet felis at convallis. Pellentesque bibendum mi non metus convallis, non consequat dui egestas. Nam quis vulputate nibh. Aenean sed metus sem. Vestibulum dolor neque, efficitur sit amet feugiat at, pulvinar in metus. Sed placerat nisi lorem, sed tempus nisl fermentum auctor. Curabitur lobortis quam eu tortor ullamcorper facilisis. &lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Mauris sodales tristique quam, id tempor sem sodales eu. Nulla a risus magna. Morbi enim dui, consectetur ac ante nec, faucibus efficitur ipsum. Integer a tristique nibh. Etiam sed sagittis libero, ac rhoncus felis. Nunc pulvinar, turpis a vehicula lobortis, ex orci pharetra ante, pulvinar tristique justo ipsum non lectus. Nam turpis enim, ultrices sed hendrerit at, varius vel sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla interdum velit id nunc posuere bibendum. Mauris nec dolor urna. Cras consequat accumsan ligula fringilla aliquam. Phasellus at condimentum ex. &lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Vivamus semper eros et faucibus ultrices. Aenean placerat placerat lorem, et rutrum magna imperdiet ac. Fusce gravida dolor ligula, quis tristique lacus mattis ornare. Maecenas non felis efficitur, luctus risus quis, consequat nunc. Phasellus sollicitudin nibh at enim tempus malesuada. Curabitur ultrices augue ac malesuada cursus. Mauris pharetra non nunc ac tincidunt. Mauris aliquet dolor ac lacus faucibus, vel luctus enim dignissim. In sit amet tincidunt diam. Nulla blandit elementum quam eget semper. Fusce non sollicitudin velit, in egestas mauris. Nunc maximus massa velit, id sodales neque lacinia id. Proin egestas ligula malesuada purus auctor, quis vestibulum magna cursus. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
