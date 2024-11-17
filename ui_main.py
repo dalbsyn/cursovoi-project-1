@@ -16,7 +16,7 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
+from PySide6.QtWidgets import (QApplication, QComboBox, QFileDialog, QFrame, QGridLayout,
     QHBoxLayout, QLabel, QLineEdit, QMainWindow,
     QMenu, QMenuBar, QProgressBar, QPushButton,
     QSizePolicy, QSpacerItem, QTextEdit, QVBoxLayout,
@@ -46,6 +46,11 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.pushButton = QPushButton(self.gridFrame)
         self.pushButton.setObjectName(u"pushButton")
+
+        self.pushButton.clicked.connect(self.select_file_dialog)
+
+
+
         sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
@@ -248,6 +253,12 @@ class Ui_MainWindow(object):
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
+    
+
+    def select_file_dialog(self):
+        filename = QFileDialog.getOpenFileName()
+        print(filename)
+        self.lineEdit.setText(filename[0])
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"\u0422\u0440\u0430\u043d\u0441\u043a\u0440\u0438\u043f\u0442\u043e\u0440 9999", None))
