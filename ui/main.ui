@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>698</width>
-    <height>541</height>
+    <width>645</width>
+    <height>614</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -194,6 +194,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="statusTip">
+          <string/>
+         </property>
          <item>
           <property name="text">
            <string>Новый элемент</string>
@@ -268,6 +271,19 @@
          </property>
         </widget>
        </item>
+       <item row="9" column="0">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item row="8" column="1">
         <widget class="QLabel" name="label_value_cpu_usage_">
          <property name="sizePolicy">
@@ -291,62 +307,51 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="0">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <widget class="QLabel" name="label_output">
-        <property name="font">
-         <font>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Вывод обработки</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QTextEdit" name="area_output"/>
-      </item>
-      <item>
-       <widget class="QProgressBar" name="progressbar_process">
-        <property name="value">
-         <number>24</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="button_start">
-        <property name="text">
-         <string>Начать</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="button_stop">
-        <property name="text">
-         <string>Остановить</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <widget class="QFrame" name="verticalFrame">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_output">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Вывод обработки</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="area_output"/>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="progressbar_process">
+         <property name="value">
+          <number>24</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_start">
+         <property name="text">
+          <string>Начать</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_stop">
+         <property name="text">
+          <string>Остановить</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -355,7 +360,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>698</width>
+     <width>645</width>
      <height>26</height>
     </rect>
    </property>
@@ -372,8 +377,17 @@
    <addaction name="menu_model_management"/>
    <addaction name="menu_reference"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>box_models</tabstop>
+  <tabstop>box_languages</tabstop>
+  <tabstop>box_devices</tabstop>
+  <tabstop>area_output</tabstop>
+  <tabstop>button_start</tabstop>
+  <tabstop>button_stop</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
