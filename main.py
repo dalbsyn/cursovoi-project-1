@@ -1,9 +1,12 @@
 import sys
 from PySide6 import QtCore, QtGui, QtWidgets
-from PySide6.QtUiTools import QUiLoader
+from app.main.main import WindowMain
 
-loader = QUiLoader()
 app = QtWidgets.QApplication(sys.argv)
-window = loader.load("ui/main.ui", None)
+
+window = WindowMain()
 window.show()
 app.exec()
+
+
+app.shutdown()
