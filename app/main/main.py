@@ -1,7 +1,9 @@
 from PySide6.QtWidgets import (QMainWindow, QWidget,
     QGridLayout, QLabel, QPushButton, QLineEdit, QComboBox, QCheckBox, QTextBrowser,
     QProgressBar, QHBoxLayout, QMenu)
-from app.model_management.main import window
+
+import app.model_management.main
+import app.reference.main
 
 class FileSelection(QWidget):
     """В данном классе определяются виджеты для реализации части выбора файла.
@@ -187,7 +189,9 @@ class WindowMain(QMainWindow):
         self.__menubar = self.menuBar()
         self.setMenuBar(self.__menubar)
 
-        self.__menubar.addAction("Model management")
-        self.__menubar.addAction("Reference")
+        self.__menu_model = self.__menubar.addAction("Model management")
+        self.__menu_reference = self.__menubar.addAction("Reference")
 
-        self.__menubar.triggered.connect(window)
+        self.__menu_model.triggered.connect(app.model_management.main.window)
+        self.__menu_reference.triggered.connect(app.reference.main.window)
+
