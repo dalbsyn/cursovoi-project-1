@@ -1,4 +1,7 @@
-from PySide6.QtWidgets import (QGridLayout, QLabel, QLineEdit, QPushButton, QWidget)
+from PySide6.QtWidgets import (QGridLayout, QLabel, QLineEdit, QPushButton,
+                               QWidget, QFileDialog)
+from PySide6.QtGui import QFont
+
 
 class FileSelection(QWidget):
     """В данном классе определяются виджеты для реализации части выбора файла.
@@ -20,3 +23,15 @@ class FileSelection(QWidget):
         self.__grid_layout.addWidget(self.__button_file_selection, 1, 1)
 
         self.setLayout(self.__grid_layout)
+
+        # Стилизация элементов
+        self.__bold_font = QFont()
+        self.__bold_font.setBold(True)
+        self.__label_file_selection.setFont(self.__bold_font)
+
+        self.__button_file_selection.clicked.connect(self.open_file)
+    
+    def open_file(self):
+        self.__file_dialog = QFileDialog.getOpenFileName()
+        self.__line_file_selection.setText(self.__file_dialog[0])
+

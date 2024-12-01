@@ -1,5 +1,8 @@
 from PySide6.QtWidgets import (QGridLayout, QLabel, QWidget, QTextBrowser, QPushButton, QProgressBar)
+from PySide6.QtGui import QFont
 
+from faster_whisper import WhisperModel
+from app.main.process_settings import ProcessSettings
 
 class Output(QWidget):
 
@@ -21,3 +24,14 @@ class Output(QWidget):
         self.__grid_layout.addWidget(self.__button_stop, 3, 1)
 
         self.setLayout(self.__grid_layout)
+
+        # Стилизация элементов
+        self.__bold_font = QFont()
+        self.__bold_font.setBold(True)
+        self.__label_output.setFont(self.__bold_font)
+
+        self.__button_begin.clicked.connect(self.transcribe)
+
+    def transcribe(self):
+        ass = ProcessSettings()
+        print(o)

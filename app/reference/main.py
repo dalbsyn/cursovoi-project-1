@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import (QDialog, QWidget,
     QGridLayout, QLabel, QTextBrowser, QListWidget)
-from PySide6.QtGui import QFont
+
 
 class Leftside(QWidget):
     def __init__(self):

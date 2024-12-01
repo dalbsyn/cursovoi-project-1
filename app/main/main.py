@@ -1,6 +1,5 @@
-from PySide6.QtWidgets import (QMainWindow, QWidget,
-    QGridLayout, QLabel, QPushButton, QLineEdit, QComboBox, QCheckBox, QTextBrowser,
-    QProgressBar, QHBoxLayout, QMenu)
+from PySide6.QtWidgets import (QWidget, QGridLayout, QHBoxLayout,
+                               QSpacerItem, QSizePolicy, QMainWindow)
 
 import app.main.file_selection
 import app.main.main_window
@@ -9,7 +8,7 @@ import app.main.process_values
 import app.main.output
 
 import app.model_management.main
-import app.model_management.model_management
+import app.reference.main
 
 
 class LeftSide(QWidget):
@@ -32,6 +31,8 @@ class LeftSide(QWidget):
 
         for i in range(0, len(self.__element_list)):
             self.__grid_layout.addWidget(self.__element_list[i], i, 0)
+        
+        self.__grid_layout.addItem(QSpacerItem(1, 2, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding), self.__grid_layout.rowCount()+1, 0)
 
         self.setLayout(self.__grid_layout)
 
@@ -70,7 +71,8 @@ class WindowMain(QMainWindow):
         self.__menubar = self.menuBar()
         self.setMenuBar(self.__menubar)
 
-        self.__menubar.addAction("Model management")
-        self.__menubar.addAction("Reference")
+        self.__model_management = self.__menubar.addAction("Model management")
+        self.__reference = self.__menubar.addAction("Reference")
 
-        self.__menubar.triggered.connect(app.model_management.main.window)
+        self.__model_management.triggered.connect(app.model_management.main.window)
+        self.__reference.triggered.connect(app.reference.main.window)

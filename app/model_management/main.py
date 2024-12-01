@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import (QDialog, QWidget,
     QGridLayout, QLabel, QPushButton,
-    QProgressBar, QHBoxLayout, QListWidget, QApplication)
+    QProgressBar, QHBoxLayout, QListWidget, QSpacerItem, QSizePolicy)
 from PySide6.QtGui import QFont
 
 class LeftSide(QWidget):
@@ -51,6 +51,9 @@ class RightSide(QWidget):
         self.__grid_layout.addWidget(self.__progress_download, int(self.__grid_layout.rowCount())+1, 0, 1, 2)
         self.__grid_layout.addWidget(self.__button_download, int(self.__grid_layout.rowCount())+1, 0)
         self.__grid_layout.addWidget(self.__button_delete, int(self.__grid_layout.rowCount())-1, 1)
+
+        self.__grid_layout.addItem(QSpacerItem(1, 2, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding), self.__grid_layout.rowCount()+1, 0)
+
 
 
 class Field(QWidget):

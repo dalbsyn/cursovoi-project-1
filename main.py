@@ -8,5 +8,4 @@ window = WindowMain()
 window.show()
 app.exec()
 
-
 app.shutdown()
