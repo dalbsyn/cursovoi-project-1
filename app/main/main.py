@@ -2,7 +2,6 @@ from PySide6.QtWidgets import (QWidget, QGridLayout, QHBoxLayout,
                                QSpacerItem, QSizePolicy, QMainWindow)
 
 import app.main.file_selection
-import app.main.main_window
 import app.main.process_settings
 import app.main.process_values
 import app.main.output
