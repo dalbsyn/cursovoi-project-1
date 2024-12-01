@@ -74,11 +74,11 @@ class DialogModelManagement(QDialog):
 
         self.__central_widget = QGridLayout(self)
         
-        self.__a = LeftSide()
-        self.__b = RightSide()
-        self.__central_widget.addWidget(self.__a, 0, 0)
-        self.__central_widget.addWidget(self.__b, 0, 1)
+        self.__left_side = LeftSide()
+        self.__right_side = RightSide()
+        self.__central_widget.addWidget(self.__left_side, 0, 0)
+        self.__central_widget.addWidget(self.__right_side, 0, 1)
 
 def window():
-    app2 = DialogModelManagement()
-    app2.exec()
+    app = DialogModelManagement()
+    app.exec()
