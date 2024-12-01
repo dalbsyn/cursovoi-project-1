@@ -34,4 +34,8 @@ class FileSelection(QWidget):
     def open_file(self):
         self.__file_dialog = QFileDialog.getOpenFileName()
         self.__line_file_selection.setText(self.__file_dialog[0])
+        print(self.__line_file_selection.displayText())
+    
+    def get_file(self):
+        return self.__line_file_selection.displayText()
 

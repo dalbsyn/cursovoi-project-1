@@ -1,0 +1,9 @@
+File selection block
+
+This block is responsible for file selection, where you can select a file which will be processed later by program.
+
+You have two ways to select file:
+- insert path to file -  you can get it from file path of your file manager;
+- select file via file dialog - by clicking button You will be presented with a window, where You can select file.
+
+Any way works as expected - program recognizes file and decides if it actually processable or not.

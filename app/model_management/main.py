@@ -2,6 +2,7 @@ from PySide6.QtWidgets import (QDialog, QWidget,
     QGridLayout, QLabel, QPushButton,
     QProgressBar, QHBoxLayout, QListWidget, QSpacerItem, QSizePolicy)
 from PySide6.QtGui import QFont
+import faster_whisper.utils
 
 class LeftSide(QWidget):
     def __init__(self):
@@ -18,6 +19,9 @@ class LeftSide(QWidget):
 
         self.__grid_layout.addWidget(self.__label_models, 0, 0)
         self.__grid_layout.addWidget(self.__list_models, 1, 0)
+
+        for i in faster_whisper.utils._MODELS:
+            self.__list_models.addItem(i)
 
 
 class RightSide(QWidget):

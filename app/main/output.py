@@ -2,7 +2,7 @@ from PySide6.QtWidgets import (QGridLayout, QLabel, QWidget, QTextBrowser, QPush
 from PySide6.QtGui import QFont
 
 from faster_whisper import WhisperModel
-from app.main.process_settings import ProcessSettings
+from app.main.file_selection import FileSelection
 
 class Output(QWidget):
 
@@ -33,5 +33,5 @@ class Output(QWidget):
         self.__button_begin.clicked.connect(self.transcribe)
 
     def transcribe(self):
-        ass = ProcessSettings()
-        print(o)
+        ass = FileSelection()
+        print(ass.get_file())

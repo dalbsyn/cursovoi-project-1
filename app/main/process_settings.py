@@ -62,7 +62,6 @@ class ProcessSettings(QWidget):
         for i in faster_whisper.tokenizer._LANGUAGE_CODES:
             self.__combo_language.addItem(i)
 
-
     def get_model(self):
         a = self.combo_model.currentText()
-        print(a)
+        return a
